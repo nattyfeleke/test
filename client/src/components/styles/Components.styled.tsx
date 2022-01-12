@@ -80,6 +80,7 @@ export const SVG = styled.svg<SvgProps>`
   height: 2em;
   background: ${(props) => props.background};
   font-size: 1.6rem;
+
   path,
   polygon,
   rect {
