@@ -10,6 +10,10 @@ const StyledEmployeeList = styled.div`
   margin: 20px 0;
   padding: 20px;
 
+  @media screen and (max-width: 460px) {
+    gap: 1rem;
+  }
+
   div {
     width: 25%;
     max-width: 400px;

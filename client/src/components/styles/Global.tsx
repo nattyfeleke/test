@@ -1,11 +1,10 @@
-import { createGlobalStyle} from 'styled-components';
-
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 * {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 html {
@@ -15,9 +14,23 @@ html {
 
 body {
     font-family: sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.4;
     background-color: #feffff;
     color: #294868;
 }
-`
+
+@media screen and (max-width: 460px) {
+    html {
+       
+        font-size: 60%;
+    }
+    
+    body {
+        
+        font-size: 1.2rem;
+       
+    }
+  }
+
+`;

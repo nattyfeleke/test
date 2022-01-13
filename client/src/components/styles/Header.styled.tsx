@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-  @media screen and (max-width: 1032px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -22,8 +22,12 @@ a {
 }
 
 
-@media screen and (max-width: 1032px) {
+@media screen and (max-width: 768px) {
     width: 100%;
+  }
+
+  @media screen and (max-width: 460px) {
+    padding: 20px;
   }
 
 

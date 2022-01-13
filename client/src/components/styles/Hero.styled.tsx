@@ -17,9 +17,14 @@ const StyledHero = styled.div`
     margin: 60px 0;
   }
 
-  @media screen and (max-width: 1032px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
     height: fit-content;
+
+    h2 {
+      
+      margin: 20px 0;
+    }
 
     #heroContent {
       display: flex;
@@ -33,7 +38,7 @@ const StyledHero = styled.div`
     }
   }
 
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 520px) {
 
     #heroContent {
     h2 {

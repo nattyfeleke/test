@@ -12,6 +12,9 @@ type ButtonProps = {
 
 export const Container = styled.div`
   margin: 0 40px;
+  @media screen and (max-width: 460px) {
+    margin: 0 20px;
+  }
 `;
 
 export const Flex = styled.div`
@@ -76,8 +79,8 @@ export const IconButton = styled.button`
 `;
 
 export const SVG = styled.svg<SvgProps>`
-  width: 2em;
-  height: 2em;
+  width: 1.25em;
+  height: 1.25em;
   background: ${(props) => props.background};
   font-size: 1.6rem;
 
