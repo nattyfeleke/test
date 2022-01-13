@@ -67,7 +67,11 @@ export const RadioButtonInput = styled.input`
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 `;
 
-export const Options = styled.div``;
+export const Options = styled.div`
+display: flex,
+align-items: center;
+gap: 0.25rem;
+margin: 2px 0`;
 
 export const FormGroup = styled.div`
   margin: 20px 0;
