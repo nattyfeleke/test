@@ -13,6 +13,14 @@ p {
     color: #8e9ca9;
 }
 
+@media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 460px) {
+    padding: 20px;
+  }
+
 `;
 
 export default StyledRegister;
