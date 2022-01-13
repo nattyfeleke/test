@@ -1,4 +1,5 @@
 import { Alert, Employee } from './storeTypes';
+import { History } from 'history';
 
 export interface setAlertAction {
   type: 'SETALERT';
@@ -41,6 +42,7 @@ export interface getEmployeeSucess {
 export interface registerEmployeeAction {
   type: 'REGISTER_EMPLOYEE';
   payload: Employee;
+  history: History;
 }
 
 export interface registerEmployeeSuccess {
@@ -51,6 +53,7 @@ export interface registerEmployeeSuccess {
 export interface updateEmployeeAction {
   type: 'UPDATE_EMPLOYEE';
   payload: Employee;
+  history: History;
 }
 
 export interface updateEmployeeSuccess {

@@ -7,7 +7,6 @@ const Navbar: React.FC = () => {
     <>
       <StyledNav>
         <Link to='/'>Employees</Link>
-        <Link to='/add'>Add</Link>
       </StyledNav>
     </>
   );

@@ -35,17 +35,25 @@ export const getEmployee: getEmployeeActionCreator = (id) => {
   };
 };
 
-export const registerEmployee: registerEmployeeActionCreator = (employee) => {
+export const registerEmployee: registerEmployeeActionCreator = (
+  employee,
+  history
+) => {
   return {
     type: 'REGISTER_EMPLOYEE',
     payload: employee,
+    history: history,
   };
 };
 
-export const updateEmployee: updateEmployeeActionCreator = (employee) => {
+export const updateEmployee: updateEmployeeActionCreator = (
+  employee,
+  history
+) => {
   return {
     type: 'UPDATE_EMPLOYEE',
     payload: employee,
+    history,
   };
 };
 

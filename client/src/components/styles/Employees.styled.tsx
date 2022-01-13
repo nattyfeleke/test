@@ -22,6 +22,10 @@ a {
 }
 
 
+@media screen and (max-width: 1032px) {
+    width: 100%;
+  }
+
 
 `;
 

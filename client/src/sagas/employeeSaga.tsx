@@ -55,7 +55,10 @@ export function* getEmployeeWorker({ payload }: getEmployeeAction) {
   }
 }
 
-export function* registerEmployeeWorker({ payload }: registerEmployeeAction) {
+export function* registerEmployeeWorker({
+  payload,
+  history,
+}: registerEmployeeAction) {
   try {
     const config = {
       headers: {
@@ -72,7 +75,7 @@ export function* registerEmployeeWorker({ payload }: registerEmployeeAction) {
       payload: res.data,
     };
     yield put(data);
-
+    yield history.push('/');
     yield setAlertWorker({
       type: 'SETALERT',
       payload: {
@@ -95,7 +98,10 @@ export function* registerEmployeeWorker({ payload }: registerEmployeeAction) {
   }
 }
 
-export function* updateEmployeeWorker({ payload }: updateEmployeeAction) {
+export function* updateEmployeeWorker({
+  payload,
+  history,
+}: updateEmployeeAction) {
   try {
     const config = {
       headers: {
@@ -112,7 +118,7 @@ export function* updateEmployeeWorker({ payload }: updateEmployeeAction) {
       payload: res.data,
     };
     yield put(data);
-
+    yield history.push('/');
     yield setAlertWorker({
       type: 'SETALERT',
       payload: {

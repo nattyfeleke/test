@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { RouteComponentProps } from 'react-router-dom';
 import {
   Input,
   Label,
@@ -15,12 +15,12 @@ import { registerEmployeeActionCreator } from '../../types/actionCreatorTypes';
 import { registerEmployee } from '../../actions';
 import storeType, { Employee, Alert } from '../../types/storeTypes';
 
-interface Props {
+interface Props extends RouteComponentProps<any> {
   alert: Alert[];
   registerEmployee: registerEmployeeActionCreator;
 }
 
-const AddEmployee: React.FC<Props> = ({ alert, registerEmployee }) => {
+const AddEmployee: React.FC<Props> = ({ alert, registerEmployee, history }) => {
   const [values, setValues] = useState<Employee>({
     name: '',
     birthDate: '',
@@ -42,7 +42,7 @@ const AddEmployee: React.FC<Props> = ({ alert, registerEmployee }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    registerEmployee(values);
+    registerEmployee(values, history);
   };
 
   const resetForm = (): void => {

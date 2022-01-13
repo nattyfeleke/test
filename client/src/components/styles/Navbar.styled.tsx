@@ -6,8 +6,7 @@ const StyledNav = styled.div`
   gap: 2rem;
   margin-top: 40px;
   a {
-    color: white;
-    text-decoration: none;
+    color: #a9c6ea;
     font-size: 2rem;
     font-weight: bold;
   }

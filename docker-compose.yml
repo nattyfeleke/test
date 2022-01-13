@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo:5.0.2
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - mongoURI=mongodb+srv://nat:WZ8iM44EUFeumAip@cluster0.ndidq.mongodb.net/testProject?retryWrites=true&w=majority
+    ports:
+      - '27017:27017'
+    volumes:
+      - db:/data/db
+  app:
+    depends_on:
+      - mongodb
+    build: ./
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - '5000:5000'
+    environment:
+      - DB_HOST=mongodb
+      - mongoURI=mongodb+srv://nat:WZ8iM44EUFeumAip@cluster0.ndidq.mongodb.net/testProject?retryWrites=true&w=majority
+      - DB_PORT=27017
+    stdin_open: true
+    tty: true
+
+volumes:
+  db:

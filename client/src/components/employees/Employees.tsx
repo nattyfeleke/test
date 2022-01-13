@@ -61,9 +61,14 @@ const Employees: React.FC<Props> = ({
         ) : (
           <>
             {employees.length > 0 ? (
-              employees.map((emp, index) => (
-                <EmployeeList emp={emp} key={index} />
-              ))
+              <>
+                <Link to='/add'>
+                  <Button variant='filled'> Register New Employee</Button>
+                </Link>
+                {employees.map((emp, index) => (
+                  <EmployeeList emp={emp} key={index} />
+                ))}
+              </>
             ) : (
               <>
                 <p>No Employees registered yet!</p>

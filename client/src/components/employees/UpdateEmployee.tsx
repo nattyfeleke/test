@@ -37,6 +37,7 @@ const UpdateEmployee: React.FC<Props> = ({
   getEmployee,
   updateEmployee,
   match,
+  history,
 }) => {
   const [values, setValues] = useState<Employee>({
     name: employee?.name,
@@ -68,7 +69,6 @@ const UpdateEmployee: React.FC<Props> = ({
       ...values,
       [name]: value,
     });
-    console.log(values);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -82,7 +82,7 @@ const UpdateEmployee: React.FC<Props> = ({
       salary: values.salary,
     };
 
-    updateEmployee(updatedEmployee);
+    updateEmployee(updatedEmployee, history);
   };
 
   const resetForm = (): void => {
@@ -118,6 +118,7 @@ const UpdateEmployee: React.FC<Props> = ({
                 id='birthDate'
                 name='birthDate'
                 type='date'
+                value={values.birthDate ? values.birthDate : ''}
                 onChange={handleChange}
               />
             </FormGroup>

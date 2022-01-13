@@ -13,10 +13,10 @@ const Alert: React.FC<Props> = ({ alert }) => {
     <>
       <StyledAlert>
         {alert.map((index) => (
-          <>
+          <div key={index.id}>
             {index.alertType === 'success' && (
               <>
-                <SuccessAlert key={index.id}>
+                <SuccessAlert>
                   <Flex>
                     <SVG
                       fillColor='white'
@@ -34,7 +34,7 @@ const Alert: React.FC<Props> = ({ alert }) => {
 
             {index.alertType === 'error' && (
               <>
-                <ErrorAlert key={index.id}>
+                <ErrorAlert>
                   <Flex>
                     <SVG
                       fillColor='white'
@@ -49,7 +49,7 @@ const Alert: React.FC<Props> = ({ alert }) => {
                 </ErrorAlert>
               </>
             )}
-          </>
+          </div>
         ))}
       </StyledAlert>
     </>
