@@ -58,5 +58,5 @@
   "devDependencies": {
     "@types/query-string": "^6.3.0"
   },
-  "proxy": "http://127.0.0.1:5000"
+  "proxy": "https://merntestas.herokuapp.com/"
 }
