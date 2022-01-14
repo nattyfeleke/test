@@ -1,11 +1,4 @@
-import {
-  takeEvery,
-  put,
-  fork,
-  call,
-  take,
-  StrictEffect,
-} from 'redux-saga/effects';
+import { takeEvery, put, StrictEffect } from 'redux-saga/effects';
 import {
   ActionTypes,
   setAlertAction,
@@ -13,7 +6,6 @@ import {
   removeAlertAction,
   removeAlertSuccess,
 } from '../types/actionTypes';
-import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 //watchers

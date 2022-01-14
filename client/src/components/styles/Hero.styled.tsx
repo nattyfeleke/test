@@ -22,8 +22,8 @@ const StyledHero = styled.div`
     height: fit-content;
 
     h2 {
-      
       margin: 20px 0;
+      font-size: 2.5rem;
     }
 
     #heroContent {
@@ -32,24 +32,20 @@ const StyledHero = styled.div`
       gap: 2rem;
       img {
         width: 50%;
-        margin-left-30px
+        margin-left: 30px;
       }
-
     }
   }
 
   @media screen and (max-width: 520px) {
-
     #heroContent {
-    h2 {
-      text-align: center;
-      width : 100%;
-    }    
-        img {
-        display: none
+      h2 {
+        text-align: center;
+        width: 100%;
       }
-
-     
+      img {
+        display: none;
+      }
     }
   }
 `;

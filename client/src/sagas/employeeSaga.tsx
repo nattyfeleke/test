@@ -1,4 +1,4 @@
-import { takeEvery, put, call, take, StrictEffect } from 'redux-saga/effects';
+import { put, call, StrictEffect } from 'redux-saga/effects';
 import {
   ActionTypes,
   getEmployeesSucess,
@@ -12,8 +12,6 @@ import {
   deleteEmployeeSuccess,
 } from '../types/actionTypes';
 import axios, { AxiosResponse } from 'axios';
-import { v4 as uuidv4 } from 'uuid';
-import { setAlert, registerEmployee } from '../actions';
 import { setAlertWorker } from './alertSaga';
 
 //watchers
@@ -60,11 +58,11 @@ export function* registerEmployeeWorker({
   history,
 }: registerEmployeeAction) {
   try {
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
+    // const config = {
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // };
     const res: AxiosResponse = yield call(
       axios.post,
       '/api/employees',
@@ -152,6 +150,14 @@ export function* deleteEmployeeWorker({ payload }: deleteEmployeeAction) {
       payload: res.data,
     };
     yield put(data);
+
+    yield setAlertWorker({
+      type: 'SETALERT',
+      payload: {
+        msg: 'Employee deleted successfully.',
+        alertType: 'success',
+      },
+    });
   } catch (err: any) {
     const errors = err.response.data.errors;
     console.log(errors);

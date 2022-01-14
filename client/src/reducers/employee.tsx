@@ -1,7 +1,9 @@
 import {
+  getEmployeeSucess,
   getEmployeesSucess,
   registerEmployeeSuccess,
   updateEmployeeSuccess,
+  deleteEmployeeSuccess,
 } from '../types/actionTypes';
 
 import storeTypes, { Employee } from '../types/storeTypes';
@@ -15,7 +17,12 @@ const initialState: storeTypes['employee'] = {
 const employee = (
   state: storeTypes['employee'] = initialState,
   action: any
-  // action: registerEmployeeSuccess | updateEmployeeSuccess | getEmployeesSucess
+  // action:
+  //   | registerEmployeeSuccess
+  //   | updateEmployeeSuccess
+  //   | getEmployeeSucess
+  //   | getEmployeesSucess
+  //   | deleteEmployeeSuccess
 ) => {
   const { type, payload } = action;
   switch (type) {
